@@ -29,7 +29,11 @@ export function AppSidebar() {
         <SidebarGroup />
         {basicMenuItems.map((each) => {
           return (
-            <Link href={each.url} className="flex items-center gap-2">
+            <Link
+              key={each.url}
+              href={each.url}
+              className="flex items-center gap-2"
+            >
               <each.icon />
               {each.title}
             </Link>

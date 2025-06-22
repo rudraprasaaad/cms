@@ -1,6 +1,7 @@
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { Layers, Pencil, Zap } from "lucide-react";
+import Link from "next/link";
 
 export default function Landing() {
   return (
@@ -16,10 +17,13 @@ export default function Landing() {
             </p>
           </div>
           <div className="flex gap-3">
-            <Button className="bg-gray-200">Try it out</Button>
-            <Button className="" variant="outline">
+            <Link
+              className="bg-gray-200 flex flex-col justify-center text-black px-4 py-1 rounded hover:bg-gray-300 transition-all duration-200 delay-100"
+              href="/"
+            >
               Try it out
-            </Button>
+            </Link>
+            <Button variant="outline">Learn more</Button>
           </div>
         </div>
       </section>
@@ -30,27 +34,44 @@ export default function Landing() {
             <h3 className="text-xl font-bold text-gray-100">
               Intuitive Editor
             </h3>
-            <p className="text-gray-400 text-center">
+            <p className="text-gray-400 w-[70%] text-center">
               Create and edit content with user friendly interface
             </p>
           </span>
           <span className="flex flex-col items-center gap-2">
             <Layers size={50} />
             <h3 className="text-xl font-bold text-gray-100">Flexible Tools</h3>
-            <p className="text-gray-400 text-center">
+            <p className="text-gray-400 w-[70%] text-center">
               Create and edit content with user friendly interface
             </p>
           </span>
           <span className="flex flex-col items-center gap-2">
             <Zap size={50} />
             <h3 className="text-xl font-bold text-gray-100">Blazing fast</h3>
-            <p className="text-gray-400 text-center">
+            <p className="text-gray-400 w-[70%] text-center">
               Create and edit content with user friendly interface
             </p>
           </span>
         </div>
       </section>
-      <section></section>
+      <section className="h-[60vh] sm:h-[50vh] w-full flex flex-col justify-center items-start">
+        <div className="max-w-[50%] mx-auto space-y-3">
+          <h4 className="font-bold text-2xl">
+            Ready to Transform your Content Journey?
+          </h4>
+          <p className="text-sm text-gray-400">
+            Join thousands of content creators like you who chose NextERA
+          </p>
+          <div className="flex gap-2">
+            <input
+              className="bg-zinc-800 focus:outline-none rounded-md px-2 py-[7px] text-sm text-gray-400"
+              type="text"
+              placeholder="Enter your email"
+            />
+            <Button variant="outline">Submit</Button>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
