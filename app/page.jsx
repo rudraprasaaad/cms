@@ -12,7 +12,7 @@ export default function Landing() {
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
               Manage your content with ease
             </h1>
-            <p className="text-gray-400 max-w-[700px] mx-auto ">
+            <p className="text-gray-400 max-w-[700px] mx-auto text-center">
               Streamline your content workflow, publish with confidence.
             </p>
           </div>
