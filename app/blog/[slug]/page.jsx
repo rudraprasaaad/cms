@@ -3,6 +3,9 @@ import { Calendar } from "lucide-react";
 import Image from "next/image";
 
 export default function SingleBlog() {
+  const tempTags = "SpaceX, Nasa, Exploration";
+  const tags = tempTags.split(",");
+
   return (
     <section>
       <div>
@@ -15,9 +18,13 @@ export default function SingleBlog() {
         </div>
         <div className="text-xs flex items-center gap-2">
           <p>Category:</p>
-          <p className="badge bg-gray-600/30 border border-gray-700 w-fit px-2 py-1 rounded ">
-            Space Exploration
-          </p>
+          {tags.map((tag) => (
+            <>
+              <p className="badge bg-gray-600/30 border border-gray-700 w-fit px-[2px] py-1 rounded ">
+                {tag}
+              </p>
+            </>
+          ))}
         </div>
       </div>
     </section>
