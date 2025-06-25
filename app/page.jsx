@@ -19,7 +19,7 @@ export default function Landing() {
           <div className="flex gap-3">
             <Link
               className="bg-gray-200 flex flex-col justify-center text-black px-4 py-1 rounded hover:bg-gray-300 transition-all duration-200 delay-100"
-              href="/blogs"
+              href="/sign-in"
             >
               Try it out
             </Link>
