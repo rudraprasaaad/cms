@@ -5,7 +5,7 @@ import {
   SidebarGroup,
   SidebarHeader,
 } from "@/components/ui/sidebar";
-import { Calendar, File, Home, Inbox, PenTool } from "lucide-react";
+import { Calendar, File, Home, Inbox, Pencil, Search } from "lucide-react";
 import Link from "next/link";
 
 const basicMenuItems = [
@@ -15,24 +15,19 @@ const basicMenuItems = [
     url: "/",
   },
   {
-    title: "Inbox",
-    icon: Inbox,
-    url: "/inbox",
-  },
-  {
-    title: "Calendar",
-    icon: Calendar,
-    url: "/calendar",
-  },
-  {
     title: "Blogs",
     icon: File,
     url: "/blogs",
   },
   {
     title: "Draft",
-    icon: PenTool,
+    icon: Pencil,
     url: "/draft",
+  },
+  {
+    title: "Search",
+    url: "/search",
+    icon: Search,
   },
 ];
 

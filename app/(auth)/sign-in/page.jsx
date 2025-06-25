@@ -3,11 +3,12 @@
 import { Icons } from "@/components/icons";
 import { Anvil } from "lucide-react";
 import { signIn } from "next-auth/react";
-import { toast } from "sonner";
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 export default function SignIn() {
   const [loading, setLoading] = useState(false);
+  const { toast } = useToast();
 
   const onSignIn = async () => {
     try {

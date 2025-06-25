@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { getAuthSession } from "@/lib/auth";
 import Image from "next/image";
+import SignOut from "./signout";
 
 export default async function Navbar() {
   const session = await getAuthSession();
@@ -46,6 +47,9 @@ const UserModalComponent = ({ user }) => {
         <DropdownMenuSeparator />
         <DropdownMenuItem>
           <Link href={`/profile/${user.username}`}>Go To Profile</Link>
+        </DropdownMenuItem>
+        <DropdownMenuItem>
+          <SignOut />
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

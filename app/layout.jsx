@@ -4,7 +4,7 @@ import { AppSidebar } from "@/components/app-sidebar";
 import { Poppins } from "next/font/google";
 import Navbar from "@/components/navbar";
 import AuthProvider from "@/components/providers/AuthProvider";
-import { Toaster } from "@/components/ui/sonner";
+import { Toaster } from "@/components/ui/toaster";
 
 const poppins = Poppins({
   subsets: ["latin"],
