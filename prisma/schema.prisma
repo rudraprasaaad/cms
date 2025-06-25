@@ -64,21 +64,41 @@ model VerificationToken {
   identifier String
   token      String
   expires    DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 
   @@unique([identifier, token])
 }
 
 model Post {
-  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  id        String      @id @default(auto()) @map("_id") @db.ObjectId
   title     String
-  slug      String  @unique
+  slug      String      @unique
   content   String?
   thumbnail String?
   desc      String?
   keywords  String?
   excerpt   String?
-  authorId  String  @db.ObjectId
-  author    User?   @relation(fields: [authorId], references: [id])
+  authorId  String      @db.ObjectId
+  author    User?       @relation(fields: [authorId], references: [id])
+  catSlug   String
+  category  Category?   @relation(fields: [catSlug], references: [slug])
+  createdAt DateTime    @default(now())
+  status    PostsStatus @default(DRAFT)
+}
+
+model Category {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  title String
+  slug  String @unique
+  posts Post[]
+}
+
+enum PostsStatus {
+  DRAFT
+  PUBLISHED
+  DELETED
+  ARCHIVED
 }
 
 // model Authenticator {
